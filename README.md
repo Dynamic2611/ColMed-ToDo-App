@@ -24,5 +24,28 @@ This project is a part of my interview assignment.
 ---
 
 
+## 📊 App Flow (High-Level)
+
+1. **main.dart**  
+   - Initializes Hive database  
+   - Registers Task model adapter  
+   - Opens a Hive box (`tasks`)  
+   - Provides `TaskBloc` with repository  
+
+2. **HomeScreen**  
+   - Displays task list using `BlocBuilder`  
+   - Floating button → Opens Add Task dialog  
+   - Theme toggle button  
+
+3. **TaskBloc**  
+   - Handles events (AddTask, DeleteTask, ToggleTask, LoadTasks)  
+   - Updates Hive via repository  
+   - Emits updated state  
+
+4. **TaskRepository**  
+   - Communicates with Hive DB for CRUD operations  
+
+5. **Hive DB**  
+   - Persists tasks locally (even after app restart)  
 
 
